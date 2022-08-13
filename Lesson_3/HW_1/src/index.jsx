@@ -18,6 +18,6 @@ const getAge = (dob = new Date(1990, 9, 31)) => {
 getAge();
 
 ReactDOM.render(
-  <Greeting firstName={"Mark"} lastName={"Nikoda"} age={getAge()} />,
+  <Greeting firstName={"Mark"} lastName={"Nikoda"} birthDate={getAge()} />,
   rootElem
 );
