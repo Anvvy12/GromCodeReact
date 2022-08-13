@@ -21,6 +21,7 @@ ReactDOM.render(
     firstName={"Mark"}
     lastName={"Nikoda"}
     birthDate={getAge(new Date(2010, 9, 31))}
+    // age={birthDate}
   />,
   rootElem
 );
