@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Greeting from "./Greeting";
+import { Greeting } from "./Greeting";
 import moment from "moment";
 
 const rootElem = document.querySelector("#root");
