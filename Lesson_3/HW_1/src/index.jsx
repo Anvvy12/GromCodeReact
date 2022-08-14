@@ -9,9 +9,9 @@ const formatDate = (date) => moment().diff(date, "years", false);
 
 ReactDOM.render(
   <Greeting
-    firstName={"Mark"}
-    lastName={"Nikoda"}
-    birthDate={formatDate("2022-07-17")}
+    firstName={"John"}
+    lastName={"Doe"}
+    birthDate={formatDate("2005-07-17")}
     // age={birthDate}
   />,
   rootElem
