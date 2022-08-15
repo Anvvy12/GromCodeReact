@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { Profile } from "./Profile";
+import Profile from "./Profile";
 
 const rootElem = document.querySelector("#root");
 const userData = {
@@ -11,4 +11,4 @@ const userData = {
   birthPlace: "London",
 };
 
-ReactDOM.render(<Profile user={userData} />, rootElem);
+ReactDOM.render(<Profile userData={userData} />, rootElem);
