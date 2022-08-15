@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Comment from "./Comments";
+import Comment from "./Comment";
 import "./styles/styles.scss";
 
 const rootElem = document.querySelector("#root");
