@@ -1,27 +1,17 @@
 import React from "react";
 import "./styles/comment.scss";
+import "./styles/styles.scss";
+import moment from "moment";
+import UserInfo from "./UserInfo";
 
-const normalDate = (date) => {
-  return `${date.getDay()} ${date.toLocaleString("en", {
-    month: "long",
-  })} ${date.getFullYear()}`;
-};
-
-// const formatDate = (date) => moment(date).format("DD MMM YYYY");
+const formatDate = (date) => moment(date).format("DD MMM YYYY");
 
 function Comment(props) {
   return (
     <div className="comment">
-      <div className="user-info">
-        <img
-          className="avatar"
-          src={props.user.avatarUrl}
-          alt={props.user.name}
-        />
-        <div className="user-info__name">{props.user.name}</div>
-      </div>
+      <UserInfo avatarUrl={props.user.avatarUrl} name={props.user.name} />
       <div className="comment__text">{props.text}</div>
-      <div className="comment__date">{normalDate(props.date)}</div>
+      <div className="comment__date">{formatDate(props.date)}</div>
     </div>
   );
 }
