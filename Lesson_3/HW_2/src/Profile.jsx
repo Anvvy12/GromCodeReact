@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 import "./styles.css";
 
-const time = (date) => moment(date).format("DD MMM YY", false);
+const time = (date) => moment(date).format("DD MMM YY");
 
 export default (props) => {
   return (
