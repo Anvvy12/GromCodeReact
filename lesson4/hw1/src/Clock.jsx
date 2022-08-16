@@ -12,7 +12,7 @@ const getTimeWithOffset = (offset) => {
   ).format("h:mm:ss A");
 };
 
-class Clock extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
 
@@ -39,5 +39,3 @@ class Clock extends Component {
     );
   }
 }
-
-export default Clock;
