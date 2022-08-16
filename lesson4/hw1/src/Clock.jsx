@@ -9,7 +9,7 @@ const getTimeWithOffset = (offset) => {
   const utcOffset = currentTime.getTimezoneOffset() / 60;
   return moment(
     currentTime.setHours(currentTime.getHours() + offset + utcOffset)
-  ).format("h:mm:ss");
+  ).format("h:mm:ss A");
 };
 
 export default class extends Component {
@@ -32,7 +32,7 @@ export default class extends Component {
     return (
       <>
         <div className="clock">
-          <div className="clock__location">{this.props.location}</div>
+          <div className="clock__location">{this.state.location}</div>
           <div className="clock__time">{this.state.currentTime}</div>
         </div>
       </>
