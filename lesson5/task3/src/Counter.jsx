@@ -14,6 +14,10 @@ export default class extends React.Component {
   increment = () => {
     this.setState({ counter: this.state.counter + 1 });
   };
+
+  toZero() {
+    this.setState({ counter: 0 });
+  }
   render() {
     return (
       <div className="counter">
@@ -24,7 +28,9 @@ export default class extends React.Component {
         >
           -
         </button>
-        <span className="counter__value">{this.state.counter}</span>
+        <span className="counter__value" onClick={() => this.toZero()}>
+          {this.state.counter}
+        </span>
         <button
           data-action="increase"
           className="counter__button"
