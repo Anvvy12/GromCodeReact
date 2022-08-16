@@ -1,6 +1,6 @@
 import React from "react";
-import Colors from "./Colors";
+import ColorPickter from "./ColorPickter";
 
 export default () => {
-  return <Colors />;
+  return <ColorPickter />;
 };
