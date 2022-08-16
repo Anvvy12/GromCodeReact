@@ -7,9 +7,9 @@ import "./clock.scss";
 const getTimeWithOffset = (offset) => {
   const currentTime = new Date();
   const utcOffset = currentTime.getTimezoneOffset() / 60;
-  return moment(
+  return new Date(
     currentTime.setHours(currentTime.getHours() + offset + utcOffset)
-  ).format("h:mm:ss A");
+  );
 };
 
 export default class extends Component {
@@ -18,12 +18,12 @@ export default class extends Component {
 
     this.state = {
       location: props.location,
-      offset: props.offset,
+      time: getTimeWithOffset(props.offset).toLocaleTimeString(),
     };
 
     setInterval(() => {
       this.setState({
-        currentTime: getTimeWithOffset(this.state.offset),
+        time,
       });
     }, 1000);
   }
@@ -33,7 +33,7 @@ export default class extends Component {
       <>
         <div className="clock">
           <div className="clock__location">{this.state.location}</div>
-          <div className="clock__time">{this.state.currentTime}</div>
+          <div className="clock__time">{this.state.time}</div>
         </div>
       </>
     );
