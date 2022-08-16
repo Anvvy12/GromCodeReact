@@ -1,6 +1,6 @@
 import React from "react";
-import Colors from "./Colors";
+import Toggler from "./Toggler";
 
 export default () => {
-  return <Colors />;
+  return <Toggler />;
 };
