@@ -18,15 +18,16 @@ class Clock extends Component {
 
     this.state = {
       location: props.location,
-      offset: getTimeWithOffset(props.offset),
+      offset: props.offset,
     };
 
     setInterval(() => {
       this.setState({
-        corentTime: this.state.offset,
+        corentTime: getTimeWithOffset(this.state.offset),
       });
     }, 1000);
   }
+
   render() {
     return (
       <>
