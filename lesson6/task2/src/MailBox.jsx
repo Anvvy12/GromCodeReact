@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./styles/index.scss";
 const Mailbox = ({ unreadMessages }) => {
   return (
     <div className="mailbox">
