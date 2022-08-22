@@ -1,6 +1,6 @@
 import React from "react";
-import GoodButton from "./GoodButton";
+import Status from "./Status";
 
 export default () => {
-  return <GoodButton />;
+  return <Status />;
 };
