@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Mailbox from "./s";
+import Mailbox from "./Mailbox";
 import "./styles/index.scss";
 
 const rootElem = document.querySelector("#root");
