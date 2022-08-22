@@ -1,45 +1,46 @@
-import React, { Component } from "react";
+import React from "react";
 import Greeting from "./Greeting";
+import "./styles/index.scss";
 import Login from "./Login";
 import Logout from "./Logout";
 
-export default class extends Component {
+class Auth extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
     this.state = {
       isLoggedIn: false,
     };
   }
-  handleLogin = () => {
-    this.setState({ isLoggedIn: true });
-  };
-  handleLogout = () => {
-    this.setState({ isLoggedIn: false });
-  };
+
+  handleLogin() {
+    this.setState({
+      isLoggedIn: true,
+    });
+  }
+
+  handleLogout() {
+    this.setState({
+      isLoggedIn: false,
+    });
+  }
+
   render() {
-    // const button = this.state.isLoggedIn ? (
-    //   <button className="btn logout" onClick={this.handleLogout}>
-    //     Logout
-    //   </button>
-    // ) : (
-    //   <button className="btn login" onClick={this.handleLogin}>
-    //     Login
-    //   </button>
-    // );
+    const button = this.state.isLoggedIn ? (
+      <Logout onLogout={this.handleLogout} />
+    ) : (
+      <Login onLogin={this.handleLogin} />
+    );
 
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
-        {this.state.isLoggedIn ? (
-          <button className="btn logout" onClick={this.handleLogout}>
-            Logout
-          </button>
-        ) : (
-          <button className="btn login" onClick={this.handleLogin}>
-            Login
-          </button>
-        )}
+        {button}
       </div>
     );
   }
 }
+
+export default Auth;

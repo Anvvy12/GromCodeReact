@@ -1,10 +1,8 @@
 import React from "react";
-import UserGreeting from "./UserGreeting";
 import GuestGreeting from "./GuestGreeting";
+import UserGreeting from "./UserGreeting";
 
-export default ({ isLoggedIn }) => {
-  if (isLoggedIn) {
-    return <UserGreeting />;
-  }
-  return <GuestGreeting />;
-};
+const Greeting = ({ isLoggedIn }) =>
+  isLoggedIn ? <UserGreeting /> : <GuestGreeting />;
+
+export default Greeting;
