@@ -1,6 +1,6 @@
 import React from "react";
-import GoodButton from "./GoodButton";
+import MailBox from "./MailBox";
 
 export default () => {
-  return <GoodButton />;
+  return <MailBox unreadMessage={[]} />;
 };
