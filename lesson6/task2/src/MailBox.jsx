@@ -4,7 +4,7 @@ export default ({ unreadMessages }) => {
   return (
     <div className="mailbox">
       <span className="mailbox__text">Messages</span>
-      {unreadMessage.length > 0 && (
+      {unreadMessages.length > 0 && (
         <span className="mailbox__count">{unreadMessages.length}</span>
       )}
     </div>
