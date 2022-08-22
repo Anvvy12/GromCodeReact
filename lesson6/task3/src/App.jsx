@@ -1,6 +1,6 @@
 import React from "react";
-import GoodButton from "./GoodButton";
+import Page from "./Page";
 
 export default () => {
-  return <GoodButton />;
+  return <Page />;
 };
