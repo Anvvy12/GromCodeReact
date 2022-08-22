@@ -1,6 +1,6 @@
 import React from "react";
-import MailBox from "./MailBox";
+import Mailbox from "./Mailbox";
 
 export default () => {
-  return <MailBox unreadMessage={["x"]} />;
+  return <Mailbox unreadMessage={[]} />;
 };
