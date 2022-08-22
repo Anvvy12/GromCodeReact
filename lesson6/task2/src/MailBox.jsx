@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ unreadMessages }) => {
+const Mailbox = ({ unreadMessages }) => {
   return (
     <div className="mailbox">
       <span className="mailbox__text">Messages</span>
@@ -10,3 +10,5 @@ export default ({ unreadMessages }) => {
     </div>
   );
 };
+
+export default Mailbox;
