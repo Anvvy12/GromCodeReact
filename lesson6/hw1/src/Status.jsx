@@ -11,12 +11,6 @@ class Status extends Component {
     status: false,
   };
 
-  a() {
-    console.log(12);
-    console.log(this.state.status);
-    return 1222;
-  }
-
   render() {
     return this.state.status ? <Online /> : <Offline />;
   }
