@@ -1,7 +1,5 @@
 import React from "react";
 
-const Online = () => {
-  return <div className="status__text">All good!</div>;
-};
+const Online = () => <span className="status__text">All good!</span>;
 
 export default Online;

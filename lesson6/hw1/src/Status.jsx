@@ -1,18 +1,22 @@
-import React, { Component } from "react";
-import Offline from "./Offline";
+import React from "react";
 import Online from "./Online";
+import Offline from "./Offline";
+import "./styles/index.scss";
 
-class Status extends Component {
+class Status extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      status: props.isOnline,
+    };
   }
 
-  state = {
-    status: false,
-  };
-
   render() {
-    return this.state.status ? <Online /> : <Offline />;
+    return (
+      <div className="status">
+        {this.state.status ? <Online /> : <Offline />}
+      </div>
+    );
   }
 }
 
