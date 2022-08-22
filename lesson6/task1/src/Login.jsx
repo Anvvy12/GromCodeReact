@@ -1,7 +1,5 @@
 import React from "react";
 
 export default () => {
-  <button className="btn logout" onClick={this.handleLogin}>
-    Logout
-  </button>;
+  return <button className="btn login">Login 🚀</button>;
 };
