@@ -4,7 +4,7 @@ export default ({ numbers }) => {
   return (
     <ul>
       {numbers.map((num) => (
-        <li>{num}</li>
+        <li key={num}>{num}</li>
       ))}
     </ul>
   );
