@@ -1,5 +1,9 @@
 import React from "react";
 
-export default () => {
-  return <button className="btn login">Login 🚀</button>;
+export default (props) => {
+  return (
+    <button className="btn login" onClick={props.onLogin}>
+      Login 🚀
+    </button>
+  );
 };
