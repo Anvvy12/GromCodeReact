@@ -16,9 +16,18 @@ export default class extends Component {
     });
   };
   render() {
-    const usersList = this.props.users.sort((a, b) =>
-      this.state.sorting === "asc" ? a.age - b.age : b.age - a.age
-    );
+    console.log(this.props.users);
+    let usersList;
+    if (this.state.sorting) {
+      usersList = this.props.users
+        .slice()
+        .sort((a, b) =>
+          this.state.sorting === "asc" ? a.age - b.age : b.age - a.age
+        );
+    } else {
+      usersList = this.props.users;
+    }
+
     return (
       <div>
         <button className="btn" onClick={this.toggleSorting}>
