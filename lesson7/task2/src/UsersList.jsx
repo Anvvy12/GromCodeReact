@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import User from "./User";
 
-export default class extends Component {
+class UsersList extends Component {
   constructor(props) {
     super(props);
   }
@@ -43,3 +43,5 @@ export default class extends Component {
     );
   }
 }
+
+export default UsersList;
