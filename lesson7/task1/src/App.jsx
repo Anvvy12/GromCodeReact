@@ -1,6 +1,7 @@
 import React from "react";
-import GoodButton from "./GoodButton";
+import NumbersList from "./NumbersList";
 
 export default () => {
-  return <GoodButton />;
+  const numbersArray = [1, 2, 3, 4, 5];
+  return <NumbersList numbers={numbersArray} />;
 };
