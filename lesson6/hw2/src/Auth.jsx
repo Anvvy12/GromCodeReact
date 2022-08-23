@@ -7,36 +7,39 @@ class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLogin: props.isLogin,
+      isLoggedIn: false,
+      showSpinner: false,
     };
-
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
   }
 
-  handleLoginClick() {
-    return this.setState({ isLogin: true });
-  }
+  handleLoginClick = () => {
+    this.setState({
+      showSpinner: true,
+    });
 
-  handleLogoutClick() {
-    return this.setState({ isLogin: false });
-  }
-
-  showSpinner() {
     setTimeout(() => {
-      return <Spinner />;
+      this.setState({
+        showSpinner: false,
+        isLoggedIn: true,
+      });
     }, 2000);
-  }
+  };
+
+  handleLogoutClick = () => {
+    this.setState({
+      isLoggedIn: false,
+    });
+  };
 
   render() {
-    let button;
-    if (this.state.isLogin) {
-      button = <Logout onLogout={this.handleLogoutClick} />;
-    } else {
-      button = <Login onLogin={this.handleLoginClick} />;
+    if (this.state.showSpinner) {
+      return <Spinner />;
     }
-
-    return button;
+    return this.state.isLoggedIn ? (
+      <Logout onLogout={this.handleLogoutClick} />
+    ) : (
+      <Login onLogin={this.handleLoginClick} />
+    );
   }
 }
 
