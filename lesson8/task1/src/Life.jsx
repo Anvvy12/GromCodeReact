@@ -1,4 +1,6 @@
+import React from "react";
 import React, { Component } from "react";
+
 class Life extends Component {
   constructor(props) {
     super(props);
