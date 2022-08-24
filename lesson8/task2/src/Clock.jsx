@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import moment, { utc } from "moment";
+import moment from "moment";
 
-class Clocl extends Component {
+class Clock extends Component {
   constructor(props) {
     super(props);
 
@@ -40,6 +40,6 @@ class Clocl extends Component {
   }
 }
 
-export default Clocl;
+export default Clock;
 
 // time: getTimeWithOffset(props.offset).toLocaleTimeString(),
