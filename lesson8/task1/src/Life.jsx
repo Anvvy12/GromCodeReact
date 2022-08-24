@@ -8,7 +8,7 @@ class Live extends Component {
   componentDidMount() {
     console.log("componentDidMount: API calls, subscriptions");
   }
-  shouldComponentUpdate() {
+  shouldComponentUpdate(nextProps, nextState) {
     console.log(
       "shouldComponentUpdate(nextProps, nextState): decide to render or not to render"
     );
