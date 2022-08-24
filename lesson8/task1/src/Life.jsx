@@ -27,7 +27,7 @@ class Life extends Component {
 
   render() {
     console.log("return React element to build DOM");
-    return <></>;
+    return <>2</>;
   }
 }
 
