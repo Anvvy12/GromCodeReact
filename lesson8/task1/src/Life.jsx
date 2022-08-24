@@ -18,7 +18,7 @@ class Live extends Component {
       "componentWillUnmount(): cleanup before DOM related to component will be removed"
     );
   }
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     console.log(
       "componentDidUpdate(prevProps, prevState): some updates based on new props"
     );
