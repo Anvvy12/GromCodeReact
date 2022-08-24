@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-class Live extends Component {
+class Life extends Component {
   constructor(props) {
     super(props);
     console.log("constructor: good place to create state");
@@ -30,4 +30,4 @@ class Live extends Component {
   }
 }
 
-export default Live;
+export default Life;
