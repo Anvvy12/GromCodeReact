@@ -13,6 +13,7 @@ class Life extends Component {
     console.log(
       "shouldComponentUpdate(nextProps, nextState): decide to render or not to render"
     );
+    return true;
   }
   componentWillUnmount() {
     console.log(
@@ -20,11 +21,9 @@ class Life extends Component {
     );
   }
   componentDidUpdate() {
-    if (true) {
-      console.log(
-        "componentDidUpdate(prevProps, prevState): some updates based on new props"
-      );
-    }
+    console.log(
+      "componentDidUpdate(prevProps, prevState): some updates based on new props"
+    );
   }
 
   render() {
