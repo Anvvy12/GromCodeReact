@@ -1,6 +1,6 @@
 import React from "react";
-import GoodButton from "./GoodButton";
+import Life from "./Life";
 
 export default () => {
-  return <GoodButton />;
+  return <Life />;
 };
