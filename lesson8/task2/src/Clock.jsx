@@ -6,25 +6,26 @@ class Clock extends Component {
     super(props);
 
     this.state = {
-      date: this.componentDidMount(),
+      date: this.getTimeWithOffset(this.props.offset),
     };
   }
 
-  componentDidMount() {
-    const getTimeWithOffset = (offset) => {
-      const currentTime = new Date();
-      const utcOffset = currentTime.getTimezoneOffset() / 60;
-      return new Date(
-        currentTime.setHours(currentTime.getHours() + offset + utcOffset)
-      );
-    };
+  getTimeWithOffset(offset) {
+    const currentTime = new Date();
+    const utcOffset = currentTime.getTimezoneOffset() / 60;
+    return new Date(
+      currentTime.setHours(currentTime.getHours() + offset + utcOffset)
+    );
+  }
 
+  componentDidMount() {
     this.interval = setInterval(() => {
-      this.setState({ date: getTimeWithOffset(this.props.offset) });
+      this.setState({ date: this.getTimeWithOffset(this.props.offset) });
     }, 1000);
   }
 
   componentWillUnmount() {
+    this.state.date = null;
     clearInterval(this.interval);
   }
 
