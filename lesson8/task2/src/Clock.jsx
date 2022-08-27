@@ -6,7 +6,7 @@ class Clock extends Component {
     super(props);
 
     this.state = {
-      date: componentDidMount(),
+      date: this.componentDidMount(),
     };
   }
 
