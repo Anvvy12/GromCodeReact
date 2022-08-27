@@ -22,7 +22,7 @@ export default class extends Component {
         <button onClick={this.toggle}>Toggle</button>
         {this.state.visible && (
           <>
-            <Clock location={"New York"} offset={-4} />
+            <Clock location={"New York"} offset={8} />
             <Clock location={"Kyiv"} offset={3} />
             <Clock location={"London"} offset={1} />
           </>
