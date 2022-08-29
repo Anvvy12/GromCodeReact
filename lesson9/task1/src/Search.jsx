@@ -12,7 +12,8 @@ class Search extends Component {
       value: event.target.value,
     });
   };
-  alertMessage = () => {
+  alertMessage = (event) => {
+    event.preventDefault();
     alert(`Search text: ${this.state.value}`);
   };
 
