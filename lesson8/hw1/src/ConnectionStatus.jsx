@@ -7,10 +7,9 @@ class ConnectionStatus extends Component {
       isOnline: true,
     };
   }
-  onlineStatus = (event) => {
-    console.log(event.type);
+  onlineStatus = () => {
     this.setState({
-      isOnline: event.type,
+      isOnline: true,
     });
   };
   offlineStatus = () => {
