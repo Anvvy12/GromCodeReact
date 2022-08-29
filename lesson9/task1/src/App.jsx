@@ -1,6 +1,6 @@
 import React from "react";
-import GoodButton from "./GoodButton";
+import Search from "./Search";
 
 export default () => {
-  return <GoodButton />;
+  return <Search />;
 };
