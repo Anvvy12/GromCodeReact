@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Dimension extends Component {
+class Dimensions extends Component {
   state = {
     width: innerWidth,
     height: innerHeight,
