@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 class Dimensions extends Component {
   state = {
-    width: innerWidth,
-    height: innerHeight,
+    width: null,
+    height: null,
   };
 
   componentDidMount() {
