@@ -1,6 +1,6 @@
 import React from "react";
-import GoodButton from "./GoodButton";
+import User from "./User";
 
 export default () => {
-  return <GoodButton />;
+  return <User userId={"facebook"} />;
 };
