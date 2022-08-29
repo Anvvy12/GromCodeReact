@@ -1,6 +1,6 @@
 import React from "react";
-import GoodButton from "./GoodButton";
+import ConnectionStatus from "./ConnectionStatus";
 
 export default () => {
-  return <GoodButton />;
+  return <ConnectionStatus />;
 };
