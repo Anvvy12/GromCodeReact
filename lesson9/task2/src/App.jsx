@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import UserForm from "./UserForm";
+import React from "react";
+import "./styles/index.scss";
 
-export default class extends Component {
-  createUser = (obj) => {
-    console.log(obj);
+import UserForm from "./UserForm.jsx";
+
+export default () => {
+  const createUser = (user) => {
+    console.log(user);
   };
-  render() {
-    return <UserForm onSubmit={this.createUser} />;
-  }
-}
+  return <UserForm onSubmit={createUser} />;
+};
