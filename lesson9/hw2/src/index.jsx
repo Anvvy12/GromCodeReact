@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Game from "./Game";
+
 import "./styles/index.scss";
 
 const rootElem = document.querySelector("#root");
-
-ReactDOM.render(<App />, rootElem);
+ReactDOM.render(<Game />, rootElem);
