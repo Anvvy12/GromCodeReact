@@ -1,17 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class extends Component {
-  constructor({ value }) {
-    super({ value });
-  }
-  render() {
-    return (
-      <div className="filter">
-        <span className="filter__count"></span>
-        <input type="text" className="filter__input" value="" />
-      </div>
-    );
-  }
-}
+const Filter = ({ filterText, count, onChange }) => {
+  return (
+    <div className="filter">
+      <span className="filter__count">{count}</span>
+      <input
+        onChange={onChange}
+        type="text"
+        className="filter__input"
+        value={filterText}
+      />
+    </div>
+  );
+};
 
-// filterText
+export default Filter;

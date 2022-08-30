@@ -1,13 +1,12 @@
 import React from "react";
-import UsersList from "./UsersList";
-import Filter from "./Filter";
 
-export default ({ name, age }) => {
-  const usersList = [].push({ name, age });
+const User = ({ name, age }) => {
   return (
-    <div>
-      <Filter filterText={}/>
-      <UsersList users={usersList} />
-    </div>
+    <li className="user">
+      <span className="user__name">{name}</span>
+      <span className="user__age">{age}</span>
+    </li>
   );
 };
+
+export default User;

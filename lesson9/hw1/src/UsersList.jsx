@@ -1,31 +1,42 @@
 import React, { Component } from "react";
+import User from "./User";
+import Filter from "./Filter";
 
-export default class extends Component {
+class UsersList extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      value: "",
+    };
   }
-  state = {};
+
+  onChange = (event) => {
+    this.setState({
+      value: event.target.value,
+    });
+  };
 
   render() {
+    let filtredUsersList = (
+      this.state.value === ""
+        ? this.props.users
+        : this.props.users.filter((user) =>
+            user.name.toUpperCase().includes(this.state.value.toUpperCase())
+          )
+    ).map((user) => <User key={user.id} {...user} />);
+
     return (
-      <ul className="users">
-        <li className="user">
-          <span className="user__name">Tad</span>
-          <span className="user__age">18</span>
-        </li>
-        <li className="user">
-          <span className="user__name">Anna</span>
-          <span className="user__age">45</span>
-        </li>
-        <li className="user">
-          <span className="user__name">Bob</span>
-          <span className="user__age">45</span>
-        </li>
-        <li className="user">
-          <span className="user__name">Mark</span>
-          <span className="user__age">45</span>
-        </li>
-      </ul>
+      <div>
+        <Filter
+          onChange={this.onChange}
+          count={filtredUsersList.length}
+          filterText={this.state.value}
+        />
+        <ul className="users">{filtredUsersList}</ul>
+      </div>
     );
   }
 }
+
+export default UsersList;
