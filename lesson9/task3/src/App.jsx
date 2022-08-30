@@ -1,6 +1,9 @@
 import React from "react";
-import GoodButton from "./GoodButton";
+import UserForm from "./UserForm";
 
 export default () => {
-  return <GoodButton />;
+  const createUser = (user) => {
+    console.log(user);
+  };
+  return <UserForm onSubmit={createUser} />;
 };
