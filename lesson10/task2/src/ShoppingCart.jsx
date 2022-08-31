@@ -15,11 +15,6 @@ class ShoppingCart extends Component {
         name: "Xaomi",
         price: 299,
       },
-      {
-        id: "3",
-        name: "Арбуз",
-        price: 99.99,
-      },
     ],
   };
   render() {
