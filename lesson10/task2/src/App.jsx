@@ -24,7 +24,10 @@ export default class extends Component {
     return (
       <div className="page">
         <main className="content">
-          <ShoppingCart userDate={this.state.userDate} />
+          <ShoppingCart
+            userDate={this.state.userDate}
+            userLastName={this.props.userDate}
+          />
           <Profile
             userDate={this.state.userDate}
             handleChange={this.handleChange}

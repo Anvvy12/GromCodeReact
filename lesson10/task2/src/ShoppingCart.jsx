@@ -21,7 +21,8 @@ class ShoppingCart extends Component {
     return (
       <div className="column">
         <CartTitle
-          userName={this.props.userDate.firstName}
+          userfirstName={this.props.userDate.firstName}
+          userLastName={this.props.userDate.lastName}
           count={this.state.cartItems.length}
         />
         <ProductsList cartItems={this.state.cartItems} />
