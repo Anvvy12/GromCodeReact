@@ -1,8 +1,8 @@
 import React from "react";
 
-const CartTitle = ({ userfirstName, count }) => {
+const CartTitle = ({ userName, count }) => {
   return (
-    <div className="cart-title">{`${userfirstName} you added ${count} items`}</div>
+    <div className="cart-title">{`${userName} you added ${count} items`}</div>
   );
 };
 
