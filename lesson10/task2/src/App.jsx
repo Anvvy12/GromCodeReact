@@ -25,7 +25,7 @@ export default class extends Component {
       <div className="page">
         <h1 className="title">{`Hello, ${this.state.userDate.firstName} ${this.state.userDate.lastName}`}</h1>
         <main className="content">
-          <ShoppingCart userName={this.state.userDate} />
+          <ShoppingCart userName={this.state.userDate.firstName} />
           <Profile
             userDate={this.state.userDate}
             handleChange={this.handleChange}
