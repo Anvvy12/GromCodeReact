@@ -11,7 +11,7 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    this.fetchUserData(this.props.id);
+    this.fetchUserData(this.props.userid);
   }
 
   fetchUserData(id) {
