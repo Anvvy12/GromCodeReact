@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import UserMenu from "./UserMenu";
 import UserProfile from "./UserProfile";
 
-export default class extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,3 +32,5 @@ export default class extends Component {
     );
   }
 }
+
+export default App;
