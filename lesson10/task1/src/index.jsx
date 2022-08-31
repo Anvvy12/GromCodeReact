@@ -5,4 +5,4 @@ import "./styles/index.scss";
 
 const rootElem = document.querySelector("#root");
 
-ReactDOM.render(<App id={"Blizzard"} />, rootElem);
+ReactDOM.render(<App userid={"GitHub"} />, rootElem);
