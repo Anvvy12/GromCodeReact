@@ -27,7 +27,7 @@ export default class extends Component {
         <main className="content">
           <ShoppingCart userName={this.state.userDate.firstName} />
           <Profile
-            userDate={this.state.userDate}
+            userData={this.state.userDate}
             handleChange={this.handleChange}
           />
         </main>

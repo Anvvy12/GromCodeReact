@@ -1,10 +1,10 @@
 import React from "react";
 import UserForm from "./UserForm";
 
-const Profile = ({ userDate, handleChange }) => {
+const Profile = ({ userData, handleChange }) => {
   return (
     <div className="column">
-      <UserForm userDate={userDate} handleChange={handleChange} />
+      <UserForm userDate={userData} handleChange={handleChange} />
     </div>
   );
 };
