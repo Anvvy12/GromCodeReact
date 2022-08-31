@@ -23,6 +23,7 @@ export default class extends Component {
   render() {
     return (
       <div className="page">
+        <h1 className="title">{`Hello, ${this.state.userDate.firstName} ${this.state.userDate.lastName}`}</h1>
         <main className="content">
           <ShoppingCart
             userDate={this.state.userDate}
