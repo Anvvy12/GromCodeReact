@@ -4,7 +4,7 @@ import ShoppingCart from "./ShoppingCart";
 
 export default class extends Component {
   state = {
-    userDate: {
+    userData: {
       firstName: "John",
       lastName: "Doe",
     },
@@ -13,8 +13,8 @@ export default class extends Component {
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
-      userDate: {
-        ...this.state.userDate,
+      userData: {
+        ...this.state.userData,
         [name]: value,
       },
     });
@@ -23,11 +23,11 @@ export default class extends Component {
   render() {
     return (
       <div className="page">
-        <h1 className="title">{`Hello, ${this.state.userDate.firstName} ${this.state.userDate.lastName}`}</h1>
+        <h1 className="title">{`Hello, ${this.state.userData.firstName} ${this.state.userData.lastName}`}</h1>
         <main className="content">
-          <ShoppingCart userName={this.state.userDate.firstName} />
+          <ShoppingCart userName={this.state.userData.firstName} />
           <Profile
-            userData={this.state.userDate}
+            userData={this.state.userData}
             handleChange={this.handleChange}
           />
         </main>
