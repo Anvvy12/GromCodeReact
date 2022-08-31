@@ -14,6 +14,7 @@ export default class extends Component {
     const { name, value } = event.target;
     this.setState({
       userDate: {
+        ...this.state.userDate,
         [name]: value,
       },
     });
