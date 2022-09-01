@@ -8,14 +8,14 @@ const UserForm = (props) => {
         name="firstName"
         className="user-form__input"
         value={props.userData.firstName}
-        onChange={handleChange}
+        onChange={props.handleChange}
       />
       <input
         type="text"
         name="lastName"
         className="user-form__input"
         value={props.userData.lastName}
-        onChange={handleChange}
+        onChange={props.handleChange}
       />
     </form>
   );
