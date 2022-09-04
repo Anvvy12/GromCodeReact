@@ -1,6 +1,6 @@
 import React from "react";
-import GoodButton from "./GoodButton";
+import FilterableProductTable from "./FilterableProductTable";
 
 export default () => {
-  return <GoodButton />;
+  return <FilterableProductTable />;
 };
