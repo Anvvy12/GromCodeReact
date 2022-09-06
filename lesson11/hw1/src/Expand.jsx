@@ -18,7 +18,7 @@ export default ({ children, title, toggler, isFull }) => {
           {arrow}
         </button>
       </div>
-      {info}
+      <div className="expand__content">{info}</div>
     </div>
   );
 };
