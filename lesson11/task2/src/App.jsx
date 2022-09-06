@@ -28,7 +28,7 @@ export default class extends Component {
         <Dialog
           isOpen={this.state.isOpen}
           title={"Recommendation"}
-          onClouse={this.hideDialog}
+          onClose={this.hideDialog}
         >
           <p>
             Use immutable array methods to work with data. It will help to avoid
