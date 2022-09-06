@@ -1,12 +1,12 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export default ({ children, title, toggler, isFull }) => {
   const arrow = isFull ? (
-    <FontAwesomeIcon icon={faChevronUp}></FontAwesomeIcon>
+    <i className="fa fa-chevron-up" aria-hidden="true"></i>
   ) : (
-    <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon>
+    <i className="fa fa-chevron-down" aria-hidden="true"></i>
   );
 
   const info = isFull ? children : null;
