@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Dialog = ({ isOpen, children, title, onClouse }) => {
+const Dialog = ({ isOpen, children, title, onClose }) => {
   if (!isOpen) {
     return null;
   }
