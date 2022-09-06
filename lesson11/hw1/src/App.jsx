@@ -20,10 +20,12 @@ export default class extends Component {
           toggler={this.toggleInfo}
           isFull={this.state.isFull}
         >
-          <p>
-            Hooks are a new addition in React 16.8. They let you use state and
-            other React features without writing a class.
-          </p>
+          <div className="expand__content">
+            <p>
+              Hooks are a new addition in React 16.8. They let you use state and
+              other React features without writing a class.
+            </p>
+          </div>
         </Expand>
       </div>
     );

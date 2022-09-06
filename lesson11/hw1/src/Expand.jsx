@@ -4,9 +4,9 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export default ({ children, title, toggler, isFull }) => {
   const arrow = isFull ? (
-    <FontAwesomeIcon icon={faChevronUp} />
+    <FontAwesomeIcon icon={faChevronUp}></FontAwesomeIcon>
   ) : (
-    <FontAwesomeIcon icon={faChevronDown} />
+    <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon>
   );
 
   const info = isFull ? children : null;
@@ -18,7 +18,7 @@ export default ({ children, title, toggler, isFull }) => {
           {arrow}
         </button>
       </div>
-      <div className="expand__content">{info}</div>
+      {info}
     </div>
   );
 };
