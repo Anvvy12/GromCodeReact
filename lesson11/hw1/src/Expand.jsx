@@ -17,8 +17,8 @@ export default ({ children, title, toggler, isFull }) => {
         <button className="expand__toggle-btn" onClick={toggler}>
           {arrow}
         </button>
+        <div className="expand__content">{info}</div>
       </div>
-      <div className="expand__content">{info}</div>
     </div>
   );
 };
