@@ -2,53 +2,80 @@ import React, { Component } from "react";
 import CreateTaskInput from "./CreateTaskInput";
 import Task from "./Task";
 
+const URL = "https://62e1417fe8ad6b66d8459227.mockapi.io/tasks";
+
 class TasksList extends Component {
   state = {
-    tasks: [
-      { text: "Buy milk", done: false, id: 1 },
-      { text: "Pick up Tom from airport", done: false, id: 2 },
-      { text: "Visit party", done: false, id: 3 },
-      { text: "Visit doctor", done: true, id: 4 },
-      { text: "Buy meat", done: true, id: 5 },
-    ],
+    tasks: [],
+  };
+
+  componentDidMount() {
+    this.fetchTaskList();
+  }
+
+  fetchTaskList = () => {
+    fetch(URL)
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((tasksList) => this.setState({ tasks: tasksList }));
   };
 
   onCreate = (text) => {
-    const { tasks } = this.state;
     const newTask = {
-      id: Math.random(),
       text,
       done: false,
     };
 
-    const updateTask = tasks.concat(newTask);
-    this.setState({
-      tasks: updateTask,
+    fetch(URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(newTask),
+    }).then((response) => {
+      if (response.ok) {
+        this.fetchTaskList();
+      } else {
+        throw new Error("Faild to post Task");
+      }
     });
   };
 
   handleTaskStatusChange = (id) => {
-    const updatedTask = this.state.tasks.map((task) => {
-      if (task.id === id) {
-        return { ...task, done: !task.done };
-      }
-      return task;
-    });
+    const { done, text } = this.state.tasks.find((task) => task.id === id);
+    const taskToUpdate = {
+      text,
+      done: !done,
+    };
 
-    this.setState({
-      tasks: updatedTask,
+    fetch(`${URL}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(taskToUpdate),
+    }).then((response) => {
+      if (response.ok) {
+        this.fetchTaskList();
+      } else {
+        throw new Error("Faild to PUT Task");
+      }
     });
+    this.fetchTaskList();
   };
 
   handleDeleteTask = (id) => {
-    const updatedTask = this.state.tasks.filter((task) => {
-      if (task.id !== id) {
-        return { task };
+    fetch(`${URL}/${id}`, {
+      method: "DELETE",
+    }).then((response) => {
+      if (response.ok) {
+        this.fetchTaskList();
+      } else {
+        throw new Error("Faild to DELETE Task");
       }
-    });
-
-    this.setState({
-      tasks: updatedTask,
     });
   };
   render() {
