@@ -1,6 +1,16 @@
 import React from "react";
-import GoodButton from "./GoodButton";
+import Products from "./Products";
+import Contacts from "./Contacts";
+import Home from "./Home";
+import PageNotFound from "./PageNotFound";
 
 export default () => {
-  return <GoodButton />;
+  return (
+    <div className="page">
+      <Products />
+      <Contacts />
+      <Home />
+      <PageNotFound />
+    </div>
+  );
 };
