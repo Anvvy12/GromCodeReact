@@ -1,29 +1,31 @@
 import React from "react";
-import Products from "./Products";
-import Contacts from "./Contacts";
-import Home from "./Home";
-import PageNotFound from "./PageNotFound";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import User from "./User";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 export default () => {
   return (
     <div className="page">
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/products">
-            <Products />
-          </Route>
-          <Route path="/contacts">
-            <Contacts />
-          </Route>
-          <Route path="*">
-            <PageNotFound />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+      <Router>
+        <div className="page__content">
+          <h1>Users</h1>
+          <ul className="navigation">
+            <li className="navigation__item">
+              <Link to="/users/github">Github</Link>
+            </li>
+            <li className="navigation__item">
+              <Link to="/users/facebook">Facebook</Link>
+            </li>
+          </ul>
+          <Switch>
+            <Route path="/users/:userId">
+              <User />
+            </Route>
+            <Route path="/">
+              <span>Select a user please</span>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 };
