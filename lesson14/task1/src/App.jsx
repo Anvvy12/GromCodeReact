@@ -1,6 +1,8 @@
 import React from "react";
-import GoodButton from "./GoodButton";
+import Counter from "./Counter";
+
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 export default () => {
-  return <GoodButton />;
+  return <Counter />;
 };
