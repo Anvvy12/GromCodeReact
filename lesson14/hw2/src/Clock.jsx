@@ -5,13 +5,18 @@ const Clock = ({ offset, location }) => {
   const [time, setOffset] = useState();
 
   useEffect(() => {
-    const currentTime = new Date();
-    const utcOffset = currentTime.getTimezoneOffset() / 60;
-    const actualTime = new Date(
-      currentTime.setHours(currentTime.getHours() + offset + utcOffset)
-    );
-    setOffset(moment(actualTime).format("h:mm:ss A"));
-    return () => {};
+    const intervalId = setInterval(() => {
+      const currentTime = new Date();
+      const utcOffset = currentTime.getTimezoneOffset() / 60;
+      const actualTime = new Date(
+        currentTime.setHours(currentTime.getHours() + offset + utcOffset)
+      );
+      setOffset(moment(actualTime).format("h:mm:ss A"));
+    }, 1000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
   }, [time]);
 
   return (
