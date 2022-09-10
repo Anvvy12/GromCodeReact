@@ -11,6 +11,7 @@ const Clock = ({ offset, location }) => {
       currentTime.setHours(currentTime.getHours() + offset + utcOffset)
     );
     setOffset(moment(actualTime).format("h:mm:ss A"));
+    return setOffset(moment(actualTime).format("h:mm:ss A"));
   }, [time]);
 
   return (
