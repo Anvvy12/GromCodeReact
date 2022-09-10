@@ -4,14 +4,14 @@ const ConnectionStatus = () => {
   const [isOnline, setStatus] = useState(true);
 
   useEffect(() => {
-    window.addEventListener("online", setStatus(true));
-    window.addEventListener("offline", setStatus(false));
+    window.addEventListener("online", () => setStatus(true));
+    window.addEventListener("offline", () => setStatus(false));
 
     return () => {
-      window.addEventListener("online", setStatus(true));
-      window.addEventListener("offline", setStatus(false));
+      window.removeEventListener("online", () => setStatus(true));
+      window.removeEventListener("offline", () => setStatus(false));
     };
-  }, []);
+  }, [isOnline]);
 
   return (
     <div className={`status ${isOnline ? "" : "status_offline"}`}>
